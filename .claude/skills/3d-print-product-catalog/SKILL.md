@@ -2,11 +2,12 @@
 name: 3d-print-product-catalog
 description: >-
   Generate a complete sales catalog for 3D printed products from one product
-  photo: 10 marketplace-ready listing images (hero, angles, detail, scale,
-  lifestyle, features, dimensions, packaging, trust) plus optional wall-placed
-  and desk-placed shots when asked. Use when selling 3D prints on Etsy, Amazon,
-  Shopify, or D2C and the user needs a full product catalog, listing gallery,
-  or ecommerce photo set from a single print photo.
+  photo: marketplace white hero, angles, detail, scale, brand marketing hero,
+  features, dimensions, festive gift unboxing, desk lifestyle, and wall
+  lifestyle — styled like premium heritage décor catalogs. Use when selling
+  3D prints on Etsy, Amazon, Shopify, or D2C and the user needs a full product
+  catalog, gift/desk/wall listing images, or ecommerce photo set from a single
+  print photo.
 license: MIT
 compatibility: >-
   Requires an image generation tool available to the coding agent
@@ -19,9 +20,9 @@ metadata:
   website: https://ishankdev.github.io/
   github: https://github.com/IshankDev/3d-print-product-catalog
   contact: https://ishankdev.github.io/
-  version: "1.1.0"
+  version: "1.2.0"
   category: ecommerce
-  keywords: 3d-print, 3d-printing, product-catalog, etsy, ecommerce, listing-images, marketplace, desk-decor, wall-decor
+  keywords: 3d-print, 3d-printing, product-catalog, etsy, gift, desk-decor, wall-decor, ecommerce, listing-images, heritage
   logo: assets/logo.svg
   repository: https://github.com/IshankDev/3d-print-product-catalog
   skill_path: .claude/skills/3d-print-product-catalog
@@ -29,7 +30,7 @@ metadata:
 
 # 3D Print Product Catalog
 
-Turn **one photo of a 3D printed product** into a complete **sales-ready product catalog** for marketplaces.
+Turn **one photo of a 3D printed product** into a complete **sales-ready product catalog** — including premium **hero**, **gift**, **desk**, and **wall** creatives.
 
 **Author:** Ishank Choudhary — Software Architect & AI Engineer  
 **Website / contact:** [https://ishankdev.github.io/](https://ishankdev.github.io/)  
@@ -38,117 +39,105 @@ Turn **one photo of a 3D printed product** into a complete **sales-ready product
 ## When to use
 
 - User has a 3D printed product and needs a full catalog for sale
-- User wants Etsy, Amazon, Shopify, or D2C listing images for a print
-- User asks for a product catalog, listing gallery, or “10 product images” from a print photo
-- User later asks for **wall placed** or **desk placed** variants (common for printed decor)
+- User wants Etsy / Amazon / Shopify / D2C images including gift, desk, and wall shots
+- User asks for a product catalog, listing gallery, or sales creatives from a print photo
+- User wants WORK18-style premium heritage décor catalog layouts
 
 ## Non-negotiable rules
 
-1. **Core set = images 01–10.** Generate these by default.
-2. **Wall-placed (11) and desk-placed (12) are optional.** Create them **only** if the user explicitly asks (e.g. “wall placed”, “on the wall”, “desk placed”, “on the desk”).
-3. Keep the **product identity identical** to the reference: shape, colors, materials, layer/finish cues, logos, proportions. Do not invent features.
-4. Image **01 (hero)** must be pure white background `#FFFFFF`, product ~85% of frame, **no text / props / watermarks**.
-5. Prefer **1:1** aspect ratio unless the user or target marketplace requires another ratio.
-6. Save outputs under `product-images/<product-slug>/` in the workspace (create folders as needed).
-7. If real dimensions are unknown, use clear placeholders on image 08 and tell the user to confirm print measurements.
+1. **Core set = images 01–11.** Generate these by default (includes gift, desk, and wall).
+2. **Size comparison (12)** only if the user asks or sells multiple sizes.
+3. Keep the **product identity identical** to the user’s product photo: shape, colors, materials, frame, layer/finish cues. Do **not** swap in the sample product from style refs.
+4. Image **01 (marketplace hero)** must be pure white `#FFFFFF`, product ~85% of frame, **no text / props / watermarks**.
+5. For **06 hero-brand, 09 gift, 10 desk, 11 wall**: attach **both** the product photo and the matching `assets/style-refs/*.jpg` as references. Match catalog *mood/layout*, not the sample SKU.
+6. Prefer **1:1** for marketplace slots; brand/gift/desk/wall may use **4:3** or **3:4** if that better matches catalog creatives.
+7. Save under `product-images/<product-slug>/`.
+8. If dimensions are unknown, use clear placeholders on 08 / 10 / 11 and ask the user to confirm.
+
+## Style references (bundled)
+
+| Shot | Style file |
+|------|------------|
+| Brand hero (06) | `assets/style-refs/catalog-hero-style.jpg` |
+| Gift (09) | `assets/style-refs/gift-style.jpg` |
+| Desk (10) | `assets/style-refs/desk-hero-style.jpg` |
+| Wall (11) | `assets/style-refs/wall-hero-style.jpg` |
+
+Resolve these to absolute paths from the skill directory when calling the image tool.
 
 ## Inputs
 
 | Input | Required | Notes |
 |-------|----------|--------|
-| Product photo | Yes | Photo of the finished 3D print (attached or absolute path) |
-| Product name / slug | No | Infer from filename or ask; used in output filenames |
-| Dimensions | No | Height × width × depth for image 08 (print size) |
-| Creative direction | No | Mood, room style, gifting, material look, etc. |
-| Wall / desk extras | No | Only if user requests |
-
-Confirm the reference image exists on disk before generating. If the user attached an image in chat, copy/save it to a stable workspace path first and use that path as the reference.
+| Product photo | Yes | Finished 3D print (attached or absolute path) |
+| Product name | No | Used on brand/gift/desk/wall titles |
+| Brand name | No | Optional overlay; omit if unknown |
+| Dimensions | No | For 08, 10, 11 callouts |
+| Creative direction | No | Festival mood, office desk, pooja wall, etc. |
 
 ## Workflow
 
-Copy and track:
-
 ```text
 3D Print Catalog Progress:
-- [ ] 0. Resolve reference image path + product slug
-- [ ] 1. Hero white
-- [ ] 2. Three-quarter
-- [ ] 3. Side profile
-- [ ] 4. Detail macro
-- [ ] 5. Scale / hand
-- [ ] 6. Lifestyle
-- [ ] 7. Feature infographic
-- [ ] 8. Dimensions
-- [ ] 9. Packaging
-- [ ] 10. Lifestyle / trust
-- [ ] 11. Wall-placed (ONLY if user asked)
-- [ ] 12. Desk-placed (ONLY if user asked)
-- [ ] Copy/save all files to product-images/<slug>/
-- [ ] Summarize paths + note placeholder dimensions if any
+- [ ] 0. Resolve product photo + slug + style-ref absolute paths
+- [ ] 1. hero-white (marketplace)
+- [ ] 2. three-quarter
+- [ ] 3. side-profile
+- [ ] 4. detail-macro
+- [ ] 5. scale-hand
+- [ ] 6. hero-brand (+ catalog-hero-style.jpg)
+- [ ] 7. feature-infographic
+- [ ] 8. dimensions
+- [ ] 9. gift (+ gift-style.jpg)
+- [ ] 10. desk (+ desk-hero-style.jpg)
+- [ ] 11. wall (+ wall-hero-style.jpg)
+- [ ] 12. size-comparison (ONLY if asked / multi-size)
+- [ ] Save to product-images/<slug>/ + summary table
 ```
 
 ### Step 0 — Prepare
 
-1. Resolve absolute path to the reference product photo.
-2. Choose a short kebab-case `slug` (e.g. `olive-gopuram-print`).
-3. Output dir: `product-images/<slug>/`
-4. Filenames: `<slug>-01-hero-white.png` … `<slug>-10-…png` (+ optional 11/12)
+1. Absolute path to the product photo.
+2. Absolute paths to the four style refs above.
+3. Slug e.g. `sacred-gopuram-shadow-frame`.
+4. Collect `PRODUCT_NAME`, `BRAND`, `DIMENSIONS` if available.
 
-### Step 1 — Generate core images 01–10
+### Step 1 — Generate 01–05 (studio facts)
 
-Use the agent’s image generation tool with the **reference image** attached every time.
+Product photo only. Use prompts in [references/prompt-templates.md](references/prompt-templates.md).
 
-**Cursor:** use `GenerateImage` (`CallDynamicTool` namespace `cursor`) with:
-- `reference_image_paths: [<absolute-path-to-product-photo>]`
-- `aspect_ratio: "1:1"` (default)
-- `filename`: the target filename
-- `description`: shot-specific prompt from [references/prompt-templates.md](references/prompt-templates.md)
+### Step 2 — Generate 06, 09, 10, 11 (catalog creatives)
 
-**Other agents:** use whatever image tool is available (MCP image API, local script, etc.) with the same reference + prompt pattern. Do not skip the reference image.
+For each shot, pass **product photo + matching style ref** in `reference_image_paths` (product first). Use the WORK18-inspired prompts in the prompt templates.
 
-Generate in parallel batches when the tool allows (e.g. 01–06, then 07–10).
+**Cursor:** `GenerateImage` with both paths, `aspect_ratio` `1:1` or `4:3`.
 
-Shot definitions: [references/shot-list.md](references/shot-list.md)
+### Step 3 — Generate 07–08 (+ optional 12)
 
-### Step 2 — Optional wall / desk
+Infographic and dimensions; size comparison only when needed.
 
-Only if the user asked:
+### Step 4 — Deliver
 
-- **11 wall-placed:** product mounted or hanging on a clean interior wall as wall decor
-- **12 desk-placed:** product sitting on a modern desk / work surface as desk decor
-
-If the user did **not** ask, skip 11 and 12 entirely — do not offer them unless useful as a one-line optional next step after delivery.
-
-### Step 3 — Deliver
-
-1. Ensure all generated files are in `product-images/<slug>/`.
-2. Reply with a compact table: `# | file | role`.
-3. Call out any placeholder dimensions on image 08.
-4. Do not dump huge prompt text in the final reply.
+1. Files in `product-images/<slug>/`.
+2. Compact table: `# | file | role`.
+3. Note placeholder dimensions if any.
 
 ## Prompt quality bar
 
-Every generation prompt must:
+- Product identity from **user photo** only
+- Style/mood from **style refs** for 06/09/10/11
+- Warm premium lighting; product sharpest subject
+- No stolen logos from style refs unless user owns that brand
+- Photorealistic ecommerce / catalog photography
 
-- Say **“exact same product as the reference”** (colors, geometry, accents)
-- State the **shot purpose** (hero / macro / lifestyle / etc.)
-- State **background / scene** constraints
-- Say **photorealistic ecommerce product photography of a 3D printed product**
-- Forbid unwanted text except on intentional infographic/dimension shots (07, 08)
+## Marketplace compliance (image 01)
 
-## Marketplace compliance (hero)
-
-For image 01:
-
-- Pure white background (RGB 255,255,255)
-- Single product, centered, fills ~85% of frame
-- No text, logos, watermarks, props, or lifestyle elements
-- Sharp focus, soft even studio light, subtle base shadow OK
-
-Supporting images (02–12) may use lifestyle scenes, props, and text overlays.
+- Pure white RGB 255,255,255
+- Single product, ~85% frame
+- No text, logos, watermarks, props
 
 ## Additional resources
 
-- Shot roles and buyer questions: [references/shot-list.md](references/shot-list.md)
-- Ready-to-use prompt templates: [references/prompt-templates.md](references/prompt-templates.md)
-- Example invocations: [references/examples.md](references/examples.md)
+- [references/shot-list.md](references/shot-list.md)
+- [references/prompt-templates.md](references/prompt-templates.md)
+- [references/examples.md](references/examples.md)

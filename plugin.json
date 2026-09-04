@@ -1,7 +1,7 @@
 {
   "name": "3d-print-product-catalog",
-  "version": "1.1.0",
-  "description": "Generate a complete sales catalog for 3D printed products from one photo.",
+  "version": "1.2.0",
+  "description": "Generate a complete sales catalog for 3D printed products — hero, gift, desk, and wall creatives from one photo.",
   "author": {
     "name": "Ishank Choudhary"
   },

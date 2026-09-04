@@ -1,55 +1,43 @@
 # Examples
 
-## Example 1 — Core 10 only
+## Example 1 — Full catalog (default)
 
 **User:**  
-Attach 3D print photo → “Create the full product catalog for this print.”
+Attach 3D print photo → “Create the complete product catalog for this print.”
 
 **Agent:**
 
-1. Save/copy reference to a workspace path.
-2. Slug e.g. `olive-gopuram-print`.
-3. Generate `01`–`10` with reference attached.
-4. **Do not** generate wall/desk.
-5. Save under `product-images/olive-gopuram-print/`.
-6. Return a 10-row file table.
+1. Save product photo; resolve style-ref paths under `assets/style-refs/`.
+2. Slug e.g. `sacred-gopuram-shadow-frame`.
+3. Generate **01–11** (includes brand hero, gift, desk, wall).
+4. For 06/09/10/11 pass product photo **and** matching style ref.
+5. Skip 12 unless multiple sizes.
+6. Save under `product-images/<slug>/` and return the table.
 
-## Example 2 — Core + optional placements
+## Example 2 — With brand + dimensions
 
 **User:**  
-“Generate the sales catalog. Also add wall placed and desk placed.”
+“Brand is WORK18 Studios. Product name Sacred Gopuram Shadow Frame. Size 12 inch (30 cm) tall, 9.5 inch (24 cm) wide. Generate the catalog.”
 
 **Agent:**
 
-1. Generate core `01`–`10`.
-2. Also generate `11-wall-placed` and `12-desk-placed`.
-3. Deliver all 12 paths.
+- Fill `{{BRAND}}`, `{{PRODUCT_NAME}}`, `{{DIMENSIONS}}` on 06/08/09/10/11.
+- Still keep image 01 text-free white.
 
-## Example 3 — Optional later
-
-**User (after core set exists):**  
-“Make a wall placed and desk placed version too.”
-
-**Agent:**
-
-1. Reuse the same reference image.
-2. Generate only `11` and `12`.
-3. Save beside the existing set.
-
-## Example 4 — Real print dimensions
+## Example 3 — Size comparison add-on
 
 **User:**  
-“Dimensions are 22cm high, 12cm wide, 6cm deep.”
+“Also add a size comparison for 6 inch and 12 inch.”
 
 **Agent:**
 
-- On image `08`, use those exact measurements.
-- If `08` already existed with placeholders, regenerate only `08`.
+- Generate only `12-size-comparison` (or include it in the batch).
+- Label both sizes clearly.
 
-## Example 5 — Explicit slash invoke
+## Example 4 — Slash invoke
 
 **User:**  
 `/3d-print-product-catalog` + attached print photo
 
 **Agent:**  
-Follow SKILL.md workflow end-to-end; default to core 10 unless extras are requested.
+Follow SKILL.md; default to core 01–11 with style refs on hero-brand / gift / desk / wall.
