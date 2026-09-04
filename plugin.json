@@ -14,5 +14,6 @@
     "amazon-listing",
     "ai-images",
     "skill"
-  ]
+  ],
+  "skills": "./.claude/skills/"
 }

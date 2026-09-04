@@ -3,11 +3,18 @@
 **Author:** [Ishank Choudhary](https://ishankdev.github.io/) — Software Architect & AI Engineer  
 **Website:** https://ishankdev.github.io/  
 **GitHub:** https://github.com/IshankDev/product-listing-image-set  
+**Skill folder:** https://github.com/IshankDev/product-listing-image-set/tree/main/.claude/skills/product-listing-image-set  
 **Contact:** Via website — [ishankdev.github.io](https://ishankdev.github.io/)
 
 Agent skill that turns **one product photo** into a marketplace-ready **10-image listing set**, with optional **wall-placed** and **desk-placed** lifestyle shots when the user asks for them.
 
-Works with Cursor, Claude Code, Codex, ChatGPT agents, and [MCP Market](https://mcpmarket.com/sell) (sync from GitHub or upload `SKILL.md`).
+## MCP Market import URL
+
+Use this exact skill-folder URL (not the repo root):
+
+```text
+https://github.com/IshankDev/product-listing-image-set/tree/main/.claude/skills/product-listing-image-set
+```
 
 ## What it generates
 
@@ -37,27 +44,15 @@ Works with Cursor, Claude Code, Codex, ChatGPT agents, and [MCP Market](https://
 
 ### MCP Market
 
-1. Re-sync / connect this GitHub repo: `https://github.com/IshankDev/product-listing-image-set`
-2. In Hub: set your **price** (paid amount or Free), then **Publish**
-3. Listing draft: `https://app.mcpmarket.com/ishank-iandroid/skills/product-listing-image-set`
+1. Paste the skill-folder URL above
+2. Set price (or Free), then Publish
 
 ### Cursor (local)
 
 ```bash
-# personal (all projects)
 mkdir -p ~/.cursor/skills/product-listing-image-set
-cp SKILL.md ~/.cursor/skills/product-listing-image-set/
-cp -R references assets ~/.cursor/skills/product-listing-image-set/
-
-# or project-scoped
-mkdir -p .cursor/skills/product-listing-image-set
-cp SKILL.md .cursor/skills/product-listing-image-set/
-cp -R references assets .cursor/skills/product-listing-image-set/
+cp -R .claude/skills/product-listing-image-set/* ~/.cursor/skills/product-listing-image-set/
 ```
-
-### Any Agent Skills–compatible agent
-
-Copy this repo folder (or at least `SKILL.md` + `references/` + `assets/`) into the agent’s skills directory.
 
 ## Usage
 
@@ -67,27 +62,17 @@ Copy this repo folder (or at least `SKILL.md` + `references/` + `assets/`) into 
 Create the product listing images from this photo.
 ```
 
-Optional:
-
-```text
-Also create wall placed and desk placed.
-```
-
-## Requirements
-
-- An image generation tool available to the agent (Cursor `GenerateImage`, or another image MCP/API)
-- A clear product reference photo (attached or path on disk)
-
 ## Package layout
 
 ```text
 product-listing-image-set/
-├── SKILL.md
-├── references/
-│   ├── examples.md
-│   ├── shot-list.md
-│   └── prompt-templates.md
-├── assets/logo.svg
+├── .claude/skills/product-listing-image-set/
+│   ├── SKILL.md
+│   ├── references/
+│   │   ├── examples.md
+│   │   ├── shot-list.md
+│   │   └── prompt-templates.md
+│   └── assets/logo.svg
 ├── .cursor-plugin/plugin.json
 ├── plugin.json
 ├── LICENSE

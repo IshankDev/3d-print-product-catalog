@@ -18,5 +18,6 @@
     "marketplace",
     "skill"
   ],
-  "logo": "assets/logo.svg"
+  "logo": ".claude/skills/product-listing-image-set/assets/logo.svg",
+  "skills": "./.claude/skills/"
 }
