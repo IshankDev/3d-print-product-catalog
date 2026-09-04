@@ -1,0 +1,23 @@
+{
+  "name": "product-listing-image-set",
+  "version": "1.0.0",
+  "description": "Generate a complete ecommerce product listing image set (10 core shots + optional wall/desk lifestyle) from a single product photo using the coding agent's image tools.",
+  "author": {
+    "name": "Ishank Choudhary"
+  },
+  "homepage": "https://ishankdev.github.io/",
+  "repository": "https://github.com/IshankDev",
+  "license": "MIT",
+  "keywords": [
+    "ecommerce",
+    "product-photography",
+    "product-images",
+    "amazon-listing",
+    "ai-images",
+    "lifestyle",
+    "marketplace",
+    "skill"
+  ],
+  "logo": "assets/logo.svg",
+  "skills": "./skills/"
+}

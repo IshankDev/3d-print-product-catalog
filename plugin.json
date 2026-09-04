@@ -1,0 +1,17 @@
+{
+  "name": "product-listing-image-set",
+  "version": "1.0.0",
+  "description": "Generate a complete ecommerce product listing image set from a single product photo.",
+  "author": {
+    "name": "Ishank Choudhary"
+  },
+  "homepage": "https://ishankdev.github.io/",
+  "license": "MIT",
+  "keywords": [
+    "ecommerce",
+    "product-images",
+    "amazon-listing",
+    "ai-images",
+    "skill"
+  ]
+}
