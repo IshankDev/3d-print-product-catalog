@@ -1,35 +1,33 @@
-# Product Listing Image Set
+# 3D Print Product Catalog
 
 **Author:** [Ishank Choudhary](https://ishankdev.github.io/) — Software Architect & AI Engineer  
 **Website:** https://ishankdev.github.io/  
-**GitHub:** https://github.com/IshankDev/product-listing-image-set  
-**Skill folder:** https://github.com/IshankDev/product-listing-image-set/tree/main/.claude/skills/product-listing-image-set  
+**GitHub:** https://github.com/IshankDev/3d-print-product-catalog  
+**Skill folder:** https://github.com/IshankDev/3d-print-product-catalog/tree/main/.claude/skills/3d-print-product-catalog  
 **Contact:** Via website — [ishankdev.github.io](https://ishankdev.github.io/)
 
-Agent skill that turns **one product photo** into a marketplace-ready **10-image listing set**, with optional **wall-placed** and **desk-placed** lifestyle shots when the user asks for them.
+Generate a **complete sales catalog** for your **3D printed product** from a single photo — marketplace-ready listing images for Etsy, Amazon, Shopify, and D2C.
 
 ## MCP Market import URL
 
-Use this exact skill-folder URL (not the repo root):
-
 ```text
-https://github.com/IshankDev/product-listing-image-set/tree/main/.claude/skills/product-listing-image-set
+https://github.com/IshankDev/3d-print-product-catalog/tree/main/.claude/skills/3d-print-product-catalog
 ```
 
 ## What it generates
 
-### Core set (always, unless user asks for fewer)
+### Core set (always)
 
 | # | Shot | Job |
 |---|------|-----|
 | 01 | Hero (pure white) | Main / search thumbnail |
 | 02 | Three-quarter | Depth / alternate angle |
 | 03 | Side / profile | Silhouette / thickness |
-| 04 | Detail / macro | Material & craftsmanship |
+| 04 | Detail / macro | Print finish & craftsmanship |
 | 05 | Scale (hand/reference) | Real-world size |
 | 06 | Lifestyle | In-context use |
 | 07 | Feature infographic | Benefits callouts |
-| 08 | Dimensions | Size diagram |
+| 08 | Dimensions | Print size diagram |
 | 09 | Packaging / unboxing | What’s in the box |
 | 10 | Second lifestyle / trust | Gift / brand context |
 
@@ -50,23 +48,23 @@ https://github.com/IshankDev/product-listing-image-set/tree/main/.claude/skills/
 ### Cursor (local)
 
 ```bash
-mkdir -p ~/.cursor/skills/product-listing-image-set
-cp -R .claude/skills/product-listing-image-set/* ~/.cursor/skills/product-listing-image-set/
+mkdir -p ~/.cursor/skills/3d-print-product-catalog
+cp -R .claude/skills/3d-print-product-catalog/* ~/.cursor/skills/3d-print-product-catalog/
 ```
 
 ## Usage
 
 ```text
-/product-listing-image-set
+/3d-print-product-catalog
 
-Create the product listing images from this photo.
+Create the complete product catalog for this 3D printed product.
 ```
 
 ## Package layout
 
 ```text
-product-listing-image-set/
-├── .claude/skills/product-listing-image-set/
+3d-print-product-catalog/
+├── .claude/skills/3d-print-product-catalog/
 │   ├── SKILL.md
 │   ├── references/
 │   │   ├── examples.md

@@ -1,12 +1,12 @@
 # Prompt templates
 
-Replace `{{PRODUCT}}` with a short concrete description of the item (e.g. “olive-sage green minimalist temple gopuram model”).  
+Replace `{{PRODUCT}}` with a short concrete description of the 3D printed item (e.g. “olive-sage green 3D printed minimalist temple gopuram decor”).  
 Always attach the reference image. Keep “exact same product as the reference” in every prompt.
 
 ## 01 — Hero white
 
 ```text
-Amazon-style main product photo of the exact same {{PRODUCT}} from the reference. Pure white RGB 255,255,255 background only. Straight-on front view, eye-level, product centered and filling about 85% of the frame. Soft even studio lighting, subtle soft shadow under the base. Photorealistic ecommerce product photography. No text, no props, no logos, no watermark.
+Amazon-style main product photo of the exact same {{PRODUCT}} from the reference. Pure white RGB 255,255,255 background only. Straight-on front view, eye-level, product centered and filling about 85% of the frame. Soft even studio lighting, subtle soft shadow under the base. Photorealistic ecommerce product photography of a 3D printed product. No text, no props, no logos, no watermark.
 ```
 
 ## 02 — Three-quarter

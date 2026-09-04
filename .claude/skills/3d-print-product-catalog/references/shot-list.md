@@ -30,9 +30,9 @@ When advising listing upload order, prefer:
 
 1. Hero → 2. Infographic or lifestyle → 3. Scale/detail → remaining angles → packaging → optional wall/desk
 
-## Category tweaks
+## Category tweaks (3D prints)
 
-- **Decor / sculptures:** emphasize lifestyle, wall, desk, gift packaging
-- **Apparel:** prioritize front/back/side + model/scale; skip wall/desk unless relevant
-- **Electronics:** emphasize ports/back, scale, feature callouts, what’s-in-box
-- **Beauty / jars:** include top/bottom if useful; strong macro of finish
+- **Decor / sculptures / miniatures:** emphasize lifestyle, wall, desk, gift packaging
+- **Functional prints (stands, organizers):** scale + in-use lifestyle matter most
+- **Articulated / multi-part prints:** detail macro + what’s-in-box / assembly inclusions
+- **Wearables / props:** scale on body/hand; skip wall/desk unless relevant

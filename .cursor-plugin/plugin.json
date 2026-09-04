@@ -1,23 +1,24 @@
 {
-  "name": "product-listing-image-set",
-  "version": "1.0.0",
-  "description": "Generate a complete ecommerce product listing image set (10 core shots + optional wall/desk lifestyle) from a single product photo using the coding agent's image tools.",
+  "name": "3d-print-product-catalog",
+  "version": "1.1.0",
+  "description": "Generate a complete sales catalog for 3D printed products from one photo — 10 marketplace listing images plus optional wall/desk placements.",
   "author": {
     "name": "Ishank Choudhary"
   },
   "homepage": "https://ishankdev.github.io/",
-  "repository": "https://github.com/IshankDev/product-listing-image-set",
+  "repository": "https://github.com/IshankDev/3d-print-product-catalog",
   "license": "MIT",
   "keywords": [
+    "3d-print",
+    "3d-printing",
+    "product-catalog",
+    "etsy",
     "ecommerce",
-    "product-photography",
     "product-images",
-    "amazon-listing",
-    "ai-images",
-    "lifestyle",
+    "listing-images",
     "marketplace",
     "skill"
   ],
-  "logo": ".claude/skills/product-listing-image-set/assets/logo.svg",
+  "logo": ".claude/skills/3d-print-product-catalog/assets/logo.svg",
   "skills": "./.claude/skills/"
 }

@@ -1,18 +1,19 @@
 {
-  "name": "product-listing-image-set",
-  "version": "1.0.0",
-  "description": "Generate a complete ecommerce product listing image set from a single product photo.",
+  "name": "3d-print-product-catalog",
+  "version": "1.1.0",
+  "description": "Generate a complete sales catalog for 3D printed products from one photo.",
   "author": {
     "name": "Ishank Choudhary"
   },
   "homepage": "https://ishankdev.github.io/",
-  "repository": "https://github.com/IshankDev/product-listing-image-set",
+  "repository": "https://github.com/IshankDev/3d-print-product-catalog",
   "license": "MIT",
   "keywords": [
+    "3d-print",
+    "product-catalog",
+    "etsy",
     "ecommerce",
-    "product-images",
-    "amazon-listing",
-    "ai-images",
+    "listing-images",
     "skill"
   ],
   "skills": "./.claude/skills/"

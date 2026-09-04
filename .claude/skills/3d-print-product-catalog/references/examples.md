@@ -3,21 +3,21 @@
 ## Example 1 — Core 10 only
 
 **User:**  
-Attach product photo → “Create the product listing images from this photo.”
+Attach 3D print photo → “Create the full product catalog for this print.”
 
 **Agent:**
 
 1. Save/copy reference to a workspace path.
-2. Slug e.g. `ceramic-mug`.
+2. Slug e.g. `olive-gopuram-print`.
 3. Generate `01`–`10` with reference attached.
 4. **Do not** generate wall/desk.
-5. Save under `product-images/ceramic-mug/`.
+5. Save under `product-images/olive-gopuram-print/`.
 6. Return a 10-row file table.
 
 ## Example 2 — Core + optional placements
 
 **User:**  
-“Create the product images. Also add wall placed and desk placed.”
+“Generate the sales catalog. Also add wall placed and desk placed.”
 
 **Agent:**
 
@@ -36,7 +36,7 @@ Attach product photo → “Create the product listing images from this photo.�
 2. Generate only `11` and `12`.
 3. Save beside the existing set.
 
-## Example 4 — Real dimensions
+## Example 4 — Real print dimensions
 
 **User:**  
 “Dimensions are 22cm high, 12cm wide, 6cm deep.”
@@ -49,7 +49,7 @@ Attach product photo → “Create the product listing images from this photo.�
 ## Example 5 — Explicit slash invoke
 
 **User:**  
-`/product-listing-image-set` + attached image
+`/3d-print-product-catalog` + attached print photo
 
 **Agent:**  
 Follow SKILL.md workflow end-to-end; default to core 10 unless extras are requested.
