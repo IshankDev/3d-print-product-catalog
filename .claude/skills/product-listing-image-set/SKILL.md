@@ -23,6 +23,8 @@ metadata:
   category: ecommerce
   keywords: product-images, ecommerce, amazon-listing, lifestyle, marketplace
   logo: assets/logo.svg
+  repository: https://github.com/IshankDev/product-listing-image-set
+  skill_path: .claude/skills/product-listing-image-set
 ---
 
 # Product Listing Image Set
