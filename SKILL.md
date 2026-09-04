@@ -17,11 +17,12 @@ metadata:
   author_title: Software Architect & AI Engineer
   homepage: https://ishankdev.github.io/
   website: https://ishankdev.github.io/
-  github: https://github.com/IshankDev
+  github: https://github.com/IshankDev/product-listing-image-set
   contact: https://ishankdev.github.io/
   version: "1.0.0"
   category: ecommerce
   keywords: product-images, ecommerce, amazon-listing, lifestyle, marketplace
+  logo: assets/logo.svg
 ---
 
 # Product Listing Image Set
@@ -30,7 +31,7 @@ Turn **one product photo** into a marketplace-ready listing gallery.
 
 **Author:** Ishank Choudhary — Software Architect & AI Engineer  
 **Website / contact:** [https://ishankdev.github.io/](https://ishankdev.github.io/)  
-**GitHub:** [https://github.com/IshankDev](https://github.com/IshankDev)
+**GitHub:** [https://github.com/IshankDev/product-listing-image-set](https://github.com/IshankDev/product-listing-image-set)
 
 ## When to use
 
@@ -148,4 +149,4 @@ Supporting images (02–12) may use lifestyle scenes, props, and text overlays.
 
 - Shot roles and buyer questions: [references/shot-list.md](references/shot-list.md)
 - Ready-to-use prompt templates: [references/prompt-templates.md](references/prompt-templates.md)
-- Example invocations: [examples.md](examples.md)
+- Example invocations: [references/examples.md](references/examples.md)

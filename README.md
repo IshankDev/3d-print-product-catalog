@@ -37,25 +37,27 @@ Works with Cursor, Claude Code, Codex, ChatGPT agents, and [MCP Market](https://
 
 ### MCP Market
 
-1. Connect this GitHub repo, **or** upload `SKILL.md`
-2. Set price / publish on your storefront  
-   Listing draft: `https://app.mcpmarket.com/ishank-iandroid/skills/product-listing-image-set`
+1. Re-sync / connect this GitHub repo: `https://github.com/IshankDev/product-listing-image-set`
+2. In Hub: set your **price** (paid amount or Free), then **Publish**
+3. Listing draft: `https://app.mcpmarket.com/ishank-iandroid/skills/product-listing-image-set`
 
 ### Cursor (local)
 
 ```bash
 # personal (all projects)
 mkdir -p ~/.cursor/skills/product-listing-image-set
-cp -R SKILL.md examples.md references ~/.cursor/skills/product-listing-image-set/
+cp SKILL.md ~/.cursor/skills/product-listing-image-set/
+cp -R references assets ~/.cursor/skills/product-listing-image-set/
 
 # or project-scoped
 mkdir -p .cursor/skills/product-listing-image-set
-cp -R SKILL.md examples.md references .cursor/skills/product-listing-image-set/
+cp SKILL.md .cursor/skills/product-listing-image-set/
+cp -R references assets .cursor/skills/product-listing-image-set/
 ```
 
 ### Any Agent Skills–compatible agent
 
-Copy this repo folder (or at least `SKILL.md` + `references/` + `examples.md`) into the agent’s skills directory.
+Copy this repo folder (or at least `SKILL.md` + `references/` + `assets/`) into the agent’s skills directory.
 
 ## Usage
 
@@ -80,9 +82,9 @@ Also create wall placed and desk placed.
 
 ```text
 product-listing-image-set/
-├── SKILL.md                 # Required — Agent Skills / MCP Market entrypoint
-├── examples.md
+├── SKILL.md
 ├── references/
+│   ├── examples.md
 │   ├── shot-list.md
 │   └── prompt-templates.md
 ├── assets/logo.svg
